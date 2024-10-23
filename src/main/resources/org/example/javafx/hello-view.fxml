@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.javafx.HelloController">
+    <top>
+        <MenuBar style="-fx-background-color: #f4a03c; -fx-text-fill: #d4bcdc;">
+            <Menu text="Задания">
+                <MenuItem text="1. Перекидыватель слов" onAction="#showWordSwitcher"/>
+                <MenuItem text="2. Виджеты" onAction="#showWidgets"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <StackPane fx:id="mainPane">
+            <VBox fx:id="wordSwitcherPane" spacing="10" alignment="CENTER" style="-fx-background-color: #747090;">
+                <HBox spacing="10" alignment="CENTER">
+                    <TextField fx:id="inputField"
+                               style="-fx-background-color: #35334c; -fx-text-fill: #d4bcdc; -fx-border-color: #d3bce4; -fx-border-width: 2px;"/>
+                    <Button fx:id="switchButton" text="→" onAction="#onSwitchButtonClick"
+                            style="-fx-background-color: #35334c; -fx-text-fill: #d4bcdc; -fx-border-color: #d3bce4; -fx-border-width: 2px;"/>
+                    <TextField fx:id="outputField" editable="false"
+                               style="-fx-background-color: #35334c; -fx-text-fill: #d4bcdc; -fx-border-color: #d3bce4; -fx-border-width: 2px;"/>
+                </HBox>
+            </VBox>
+            <VBox fx:id="widgetsPane" spacing="10" alignment="TOP_LEFT" style="-fx-background-color: #747090; -fx-padding: 100 0 0 100;" visible="false">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <CheckBox fx:id="checkBox1" selected="true" onAction="#toggleWidget1" text="Показать/Скрыть" style="-fx-text-fill: #d4bcdc;"/>
+                    <Label text="Виджет №1" fx:id="widget1" visible="true" style="-fx-text-fill: #d4bcdc;"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <CheckBox fx:id="checkBox2" selected="true" onAction="#toggleWidget2" text="Показать/Скрыть" style="-fx-text-fill: #d4bcdc;"/>
+                    <TextField fx:id="widget2" promptText="Виджет №2" visible="true"
+                               style="-fx-background-color: #35334c; -fx-text-fill: #d4bcdc; -fx-border-color: #d3bce4; -fx-border-width: 2px;"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <CheckBox fx:id="checkBox3" selected="true" onAction="#toggleWidget3" text="Показать/Скрыть" style="-fx-text-fill: #d4bcdc;"/>
+                    <Button fx:id="widget3" text="Нажми меня! Я - Виджет №3" visible="true"
+                            style="-fx-background-color: #35334c; -fx-text-fill: #d4bcdc; -fx-border-color: #d3bce4; -fx-border-width: 2px;"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
